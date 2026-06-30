@@ -6,20 +6,28 @@
     menuButton.addEventListener("click", () => {
       const open = nav.classList.toggle("is-open");
 
+      menuButton.classList.toggle("is-open", open);
       menuButton.setAttribute("aria-expanded", String(open));
-      menuButton.textContent = open ? "Закрыть" : "Меню";
+      menuButton.setAttribute(
+        "aria-label",
+        open ? "Закрыть меню" : "Открыть меню"
+      );
     });
 
     nav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         nav.classList.remove("is-open");
+        menuButton.classList.remove("is-open");
         menuButton.setAttribute("aria-expanded", "false");
-        menuButton.textContent = "Меню";
+        menuButton.setAttribute("aria-label", "Открыть меню");
       });
     });
   }
 
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
   const revealItems = document.querySelectorAll(".reveal");
 
   if (reduceMotion) {
