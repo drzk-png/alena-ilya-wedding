@@ -68,20 +68,13 @@ a {
   gap: 32px;
 }
 
-.site-nav a,
-.menu-toggle {
+.site-nav a {
+  position: relative;
   font: 500 11px/1 var(--mono);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  border: 0;
-  background: transparent;
   padding: 10px 0;
-  cursor: pointer;
-}
-
-.site-nav a {
-  position: relative;
 }
 
 .site-nav a::after {
@@ -102,8 +95,37 @@ a {
   transform: scaleX(1);
 }
 
+/* Кнопка мобильного меню */
+
 .menu-toggle {
   display: none;
+  width: 34px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 6px 0;
+  background: var(--ink);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .hero,
@@ -371,10 +393,6 @@ a {
   transition: transform 0.7s ease, filter 0.7s ease;
 }
 
-.schedule-item.is-visible .event-photo {
-  transform: scale(1);
-}
-
 .schedule-item:hover .event-photo {
   transform: scale(1.025);
   filter: grayscale(100%) contrast(1.03);
@@ -457,7 +475,7 @@ a {
   font: 16px/1 var(--sans);
 }
 
-/* Анимации появления */
+/* Анимации */
 
 .hero-reveal {
   opacity: 0;
