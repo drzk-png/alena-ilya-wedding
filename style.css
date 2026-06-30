@@ -197,9 +197,9 @@ a {
 .portrait {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 4.5;
+  aspect-ratio: 4 / 4.15;
   object-fit: cover;
-  object-position: center 62%;
+  object-position: center 76%;
   filter: grayscale(100%) contrast(0.94);
   background: #d6d0c7;
 }
@@ -218,8 +218,6 @@ a {
   letter-spacing: 0.13em;
   text-align: right;
 }
-
-/* Таймер */
 
 .countdown {
   display: flex;
@@ -262,8 +260,6 @@ a {
   letter-spacing: 0.05em;
 }
 
-/* Общие секции */
-
 .section {
   padding: 110px 0;
 }
@@ -289,8 +285,6 @@ a {
   gap: 12px;
   text-align: center;
 }
-
-/* Программа */
 
 .schedule-item {
   display: grid;
@@ -357,8 +351,6 @@ a {
   background: #d8d4cd;
 }
 
-/* FAQ */
-
 .faq {
   padding-bottom: 130px;
 }
@@ -407,8 +399,6 @@ a {
   font-size: 14px;
 }
 
-/* Footer */
-
 .site-footer {
   display: flex;
   align-items: center;
@@ -435,8 +425,6 @@ a {
   margin-left: 9px;
   font: 16px/1 var(--sans);
 }
-
-/* Телефоны */
 
 @media (max-width: 700px) {
   .site-header,
@@ -486,8 +474,8 @@ a {
   }
 
   .portrait {
-    aspect-ratio: 4 / 4.6;
-    object-position: center 62%;
+    aspect-ratio: 4 / 4.15;
+    object-position: center 76%;
   }
 
   .month {
@@ -573,10 +561,10 @@ a {
 
   .event-photo {
     display: block;
-    width: 100%;
-    max-width: 360px;
+    width: calc(100vw - 32px);
+    max-width: none;
     aspect-ratio: 16 / 10;
-    margin: 26px auto 0;
+    margin: 26px 0 0 calc(-75px);
     object-fit: cover;
     object-position: center;
   }
