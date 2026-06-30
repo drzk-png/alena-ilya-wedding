@@ -197,8 +197,9 @@ a {
 .portrait {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 4.5;
   object-fit: cover;
+  object-position: center 62%;
   filter: grayscale(100%) contrast(0.94);
   background: #d6d0c7;
 }
@@ -484,6 +485,11 @@ a {
     width: min(100%, 420px);
   }
 
+  .portrait {
+    aspect-ratio: 4 / 4.6;
+    object-position: center 62%;
+  }
+
   .month {
     margin: 19px 0 42px;
   }
@@ -566,8 +572,13 @@ a {
   }
 
   .event-photo {
-    width: 180px;
-    margin: 22px 0 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 16 / 10;
+    margin: 26px auto 0;
+    object-fit: cover;
+    object-position: center;
   }
 
   .faq {
